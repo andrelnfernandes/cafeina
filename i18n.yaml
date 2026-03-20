@@ -1,0 +1,57 @@
+default_language: en
+
+en:
+  start: "Log: Starting monitoring to keep system awake for {duration} minutes..."
+  interrupt_hint: "Log: Press Ctrl+C at any time to interrupt execution prematurely."
+  progress: "Log: Running time: {elapsed} min | Time remaining: {remaining} min"
+  completed: "\nLog: Completed the stipulated time of {duration} minutes."
+  interrupted: "\nLog: Execution interrupted prematurely by the user."
+  restored: "Log: Utility terminated. Power management restored."
+
+pt:
+  start: "Log: Iniciando monitoramento para manter o sistema ativo por {duration} minutos..."
+  interrupt_hint: "Log: Pressione Ctrl+C a qualquer momento para interromper a execução."
+  progress: "Log: Tempo em execução: {elapsed} min | Tempo restante: {remaining} min"
+  completed: "\nLog: Concluído o tempo estipulado de {duration} minutos."
+  interrupted: "\nLog: Execução interrompida prematuramente pelo usuário."
+  restored: "Log: Utilitário encerrado. Gerenciamento de energia restaurado."
+
+es:
+  start: "Log: Iniciando monitoreo para mantener el sistema activo por {duration} minutos..."
+  interrupt_hint: "Log: Presione Ctrl+C en cualquier momento para interrumpir la ejecución."
+  progress: "Log: Tiempo de ejecución: {elapsed} min | Tiempo restante: {remaining} min"
+  completed: "\nLog: Completado el tiempo estipulado de {duration} minutos."
+  interrupted: "\nLog: Ejecución interrumpida prematuramente por el usuario."
+  restored: "Log: Utilidad terminada. Gestión de energía restaurada."
+
+fr:
+  start: "Log: Démarrage de la surveillance pour garder le système actif pendant {duration} minutes..."
+  interrupt_hint: "Log: Appuyez sur Ctrl+C à tout moment pour interrompre l'exécution."
+  progress: "Log: Temps d'exécution : {elapsed} min | Temps restant : {remaining} min"
+  completed: "\nLog: Temps stipulé de {duration} minutes terminé."
+  interrupted: "\nLog: Exécution interrompue prématurément par l'utilisateur."
+  restored: "Log: Utilitaire terminé. Gestion de l'alimentation restaurée."
+
+de:
+  start: "Log: Überwachung gestartet, um das System für {duration} Minuten aktiv zu halten..."
+  interrupt_hint: "Log: Drücken Sie jederzeit Strg+C, um die Ausführung abzubrechen."
+  progress: "Log: Laufzeit: {elapsed} Min | Verbleibende Zeit: {remaining} Min"
+  completed: "\nLog: Festgelegte Zeit von {duration} Minuten abgelaufen."
+  interrupted: "\nLog: Ausführung vorzeitig durch den Benutzer unterbrochen."
+  restored: "Log: Dienstprogramm beendet. Energieverwaltung wiederhergestellt."
+
+ru:
+  start: "Log: Запуск мониторинга для поддержания активности системы на {duration} минут..."
+  interrupt_hint: "Log: Нажмите Ctrl+C в любое время, чтобы прервать выполнение."
+  progress: "Log: Время работы: {elapsed} мин | Оставшееся время: {remaining} мин"
+  completed: "\nLog: Заданное время {duration} минут истекло."
+  interrupted: "\nLog: Выполнение преждевременно прервано пользователем."
+  restored: "Log: Утилита завершена. Управление питанием восстановлено."
+
+zh:
+  start: "Log: 开始监控以保持系统唤醒 {duration} 分钟..."
+  interrupt_hint: "Log: 随时按 Ctrl+C 可中断执行。"
+  progress: "Log: 运行时间：{elapsed} 分钟 | 剩余时间：{remaining} 分钟"
+  completed: "\nLog: 已完成规定的 {duration} 分钟时间。"
+  interrupted: "\nLog: 执行被用户提前中断。"
+  restored: "Log: 实用程序终止。电源管理已恢复。"

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cafeina"
+version = "0.1.0"
+description = "A Python CLI utility to prevent Windows sleep/hibernation without admin privileges."
+readme = "README.md"
+authors = [
+    { name = "Andre Fernandes", email = "16240275+andrelnfernandes@users.noreply.github.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = [
+    "PyYAML>=6.0.1"
+]
+keywords = ["windows", "cli", "no-sleep", "ctypes", "i18n"]
+
+[project.scripts]
+cafeina = "cafeina:main"
