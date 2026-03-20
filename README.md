@@ -2,6 +2,12 @@
 
 A command-line utility written in Python to prevent the host operating system (Windows) from entering sleep mode or hibernating. Designed for corporate environments where administrative privileges are not available to install third-party software.
 
+## Motivation (Why I built this)
+
+You know the drill: corporate IT policies mandate a 13+ character password and aggressively lock your screen after just a few minutes of inactivity. It's incredibly frustrating when you're just monitoring a long-running batch process on the console or reading a dense technical document, and you're forced to constantly jiggle the mouse just to keep your session alive. 
+
+Changing the Windows power settings usually doesn't work because Active Directory GPOs (Group Policy Objects) or MDM profiles silently override your local preferences. I needed a solution. While I liked the original *Caffeine* utility, I thought it would be an interesting challenge to build my own lightweight, Python-based CLI tool tailored to these exact restrictions. Thus, **Cafeina** was born.
+
 ## Installation (Local Environment)
 
 To avoid polluting your global Python environment and to ensure the CLI command `cafeina` is mapped correctly, install the utility inside a Virtual Environment.
