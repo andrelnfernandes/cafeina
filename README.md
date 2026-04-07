@@ -45,6 +45,50 @@ cafeina --lang pt
 
 During execution, the script performs an in-place terminal update (no extra line breaks) displaying elapsed and remaining time. Pressing `Ctrl+C` immediately aborts the execution and restores the original power settings.
 
+### CLI Flags
+
+| Flag | Short | Description |
+|------|-------|-------------|
+| `--duration N` | `-d N` | Duration in minutes (default: 180) |
+| `--lang CODE` | `-l CODE` | Force a language (e.g., `en`, `pt`, `es`) |
+| `--background` | `-b` | Force background mode (no console output, log to file) |
+| `--foreground` | `-f` | Force foreground mode (console output) |
+| `--stop` | `-s` | Stop any running background instance and exit |
+
+### Background Mode
+
+Cafeina can run silently in the background without a console window. Use the `--background` flag or launch via `pythonw.exe`:
+
+```powershell
+# Force background mode from the CLI
+cafeina -b -d 120
+
+# Launch without a console window
+pythonw.exe cafeina.py -d 120
+
+# Or use a .vbs script for a completely silent launch:
+# Create a file `start_cafeina.vbs`:
+#   CreateObject("Wscript.Shell").Run "pythonw.exe cafeina.py -d 120", 0, False
+# Then double-click the .vbs file.
+```
+
+**Background mode features:**
+- **No console window** — the process runs silently.
+- **File logging with rotation** — output is written to `cafeina.log` (rotated at 5 MB, keeping 3 backups).
+- **Throttled progress logs** — progress entries are written every 15 minutes.
+- **Automatic process management** — starting a new instance automatically stops the previous one via a PID file (`cafeina.pid`).
+
+### Stopping a Background Instance
+
+```bash
+# Gracefully stop any running background instance
+cafeina --stop
+
+# Or manually via Task Manager: end the pythonw.exe process
+```
+
+When stopped, power settings are automatically restored and the PID file is cleaned up.
+
 ## 🌍 Internationalization (i18n)
 
 Translations are managed via the `i18n.yaml` file. The default language is defined inside the YAML structure (`default_language: en`). Currently supported:

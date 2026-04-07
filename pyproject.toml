@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cafeina"
-version = "0.1.0"
+version = "0.2.0"
 description = "A Python CLI utility to prevent Windows sleep/hibernation without admin privileges."
 readme = "README.md"
 authors = [
@@ -16,6 +16,9 @@ dependencies = [
     "PyYAML>=6.0.1"
 ]
 keywords = ["windows", "cli", "no-sleep", "ctypes", "i18n"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
 
 [project.scripts]
 cafeina = "cafeina:main"
