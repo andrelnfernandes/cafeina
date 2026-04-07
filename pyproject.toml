@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cafeina"
-version = "0.2.0"
+version = "0.2.01"
 description = "A Python CLI utility to prevent Windows sleep/hibernation without admin privileges."
 readme = "README.md"
 authors = [

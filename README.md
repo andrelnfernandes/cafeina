@@ -57,19 +57,17 @@ During execution, the script performs an in-place terminal update (no extra line
 
 ### Background Mode
 
-Cafeina can run silently in the background without a console window. Use the `--background` flag or launch via `pythonw.exe`:
+### Background Mode
+
+Cafeina can run silently in the background, automatically detaching from your current terminal session. Use the `--background` flag:
 
 ```powershell
-# Force background mode from the CLI
+# Force background mode from the CLI (returns prompt immediately)
 cafeina -b -d 120
 
 # Launch without a console window
 pythonw.exe cafeina.py -d 120
 
-# Or use a .vbs script for a completely silent launch:
-# Create a file `start_cafeina.vbs`:
-#   CreateObject("Wscript.Shell").Run "pythonw.exe cafeina.py -d 120", 0, False
-# Then double-click the .vbs file.
 ```
 
 **Background mode features:**
@@ -108,3 +106,9 @@ The following API flags are combined (bitwise OR):
 * `ES_CONTINUOUS` (`0x80000000`): Maintains the active state until explicitly reset.
 * `ES_SYSTEM_REQUIRED` (`0x00000001`): Prevents system sleep.
 * `ES_DISPLAY_REQUIRED` (`0x00000002`): Prevents the monitor from turning off.
+
+### Process Management & Background Execution
+
+To achieve true silent background execution without blocking the parent console, Cafeina forks itself using `subprocess.Popen` combined with the Windows-specific `DETACHED_PROCESS` (`0x00000008`) creation flag.
+
+Background instances are tracked via a local `cafeina.pid` file. Because standard POSIX signals (`os.kill`) are unreliable for detached GUI-less processes (`pythonw.exe`) on Windows, process termination is enforced natively by invoking `taskkill.exe /F /T /PID`. Furthermore, standard streams (`stdout`, `stderr`) are actively shielded and routed to `os.devnull`. This prevents silent `AttributeError` crashes when underlying libraries (like `argparse`) attempt to print error messages to an unattached console.
